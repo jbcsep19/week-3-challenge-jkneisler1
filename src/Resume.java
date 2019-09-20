@@ -1,31 +1,58 @@
 import java.util.ArrayList;
 
 public class Resume {
-    String name;
-    String email;
-    String linkeIn;
-    String address;
-    String city;
-    String state;
-    String zip;
-    String phone;
+    // Personal Information
+    private String name;
+    private String email;
+    private String linkeIn;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+    private String phone;
 
     // Education
-    ArrayList<Education> education;
+    ArrayList<Education> education = new ArrayList<>();
 
     // Work Experience
-    ArrayList<WorkExperience> workExperience;
+    ArrayList<WorkExperience> workExperience = new ArrayList<>();
 
     // Skills
-    ArrayList<Skills> skills;
+    Skills tSkills = new Skills();
+    Skills mSkills = new Skills();
 
+    // Printing Resume information
+    //  Printing personal information
+    public String printPersonal() {
+        StringBuilder sbrp = new StringBuilder();
+        sbrp.append("RESUME:\n=======");
+        sbrp.append("\nName:     ");
+        sbrp.append(getName());
+        sbrp.append("\nEmail:    ");
+        sbrp.append(getEmail());
+        sbrp.append("\nLinkedIn: ");
+        sbrp.append(getLinkeIn());
+        sbrp.append("\nPhone:    ");
+        sbrp.append(getPhone());
+        sbrp.append("\n\nAddress: ");
+        sbrp.append(getAddress());
+        sbrp.append("\nCity:    ");
+        sbrp.append(getCity());
+        sbrp.append("\nState:   ");
+        sbrp.append(getState());
+        sbrp.append("     Zip: ");
+        sbrp.append(getZip());
+        sbrp.append("\n");
+
+        return sbrp.toString();
+    }
+    // Resume constructors
     public Resume() {
     }
 
-
     public Resume(String name, String email, String linkeIn, String address, String city,
                   String state, String zip, String phone, ArrayList<Education> education,
-                  ArrayList<WorkExperience> workExperience, ArrayList<Skills> skills) {
+                  ArrayList<WorkExperience> workExperience, Skills tSkills, Skills mSkills) {
         this.name = name;
         this.email = email;
         this.linkeIn = linkeIn;
@@ -36,13 +63,14 @@ public class Resume {
         this.phone = phone;
         this.education = education;
         this.workExperience = workExperience;
-        this.skills = skills;
+        this.tSkills = tSkills;
+        this.mSkills = mSkills;
     }
 
+    // Getters and Setters
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -50,7 +78,6 @@ public class Resume {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -58,7 +85,6 @@ public class Resume {
     public ArrayList<Education> getEducation() {
         return education;
     }
-
     public void setEducation(ArrayList<Education> education) {
         this.education = education;
     }
@@ -66,23 +92,28 @@ public class Resume {
     public ArrayList<WorkExperience> getWorkExperience() {
         return workExperience;
     }
-
     public void setWorkExperience(ArrayList<WorkExperience> workExperience) {
         this.workExperience = workExperience;
     }
 
-    public ArrayList<Skills> getSkills() {
-        return skills;
+    // Skills
+    public Skills getTSkills() {
+        return tSkills;
+    }
+    public void setTSkills(Skills tSkills) {
+        this.tSkills = tSkills;
     }
 
-    public void setSkills(ArrayList<Skills> skills) {
-        this.skills = skills;
+    public Skills getMSkills() {
+        return mSkills;
+    }
+    public void setMSkills(Skills mSkills) {
+        this.mSkills = mSkills;
     }
 
     public String getLinkeIn() {
         return linkeIn;
     }
-
     public void setLinkeIn(String linkeIn) {
         this.linkeIn = linkeIn;
     }
@@ -90,15 +121,11 @@ public class Resume {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getCity() {
-        return city;
-    }
-
+    public String getCity() { return city; }
     public void setCity(String city) {
         this.city = city;
     }
@@ -106,7 +133,6 @@ public class Resume {
     public String getState() {
         return state;
     }
-
     public void setState(String state) {
         this.state = state;
     }
@@ -114,7 +140,6 @@ public class Resume {
     public String getZip() {
         return zip;
     }
-
     public void setZip(String zip) {
         this.zip = zip;
     }
@@ -122,8 +147,8 @@ public class Resume {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }

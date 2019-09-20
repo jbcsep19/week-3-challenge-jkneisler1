@@ -1,11 +1,34 @@
 public class Education {
-    String universityName;
-    String universityAddress;
-    Double gradePointAverage;
-    Boolean graduated;
-    String degree;
-    String other;
+    private String universityName;
+    private String universityAddress;
+    private Double gradePointAverage;
+    private Boolean graduated;
+    private String degree;
+    private String other;
 
+    // Methods
+    public String printEducation() {
+        StringBuilder sbEd = new StringBuilder();
+        // sbEd.append("\nEducational Experience:");
+        // sbEd.append("\n=======================");
+        sbEd.append("University: ");
+        sbEd.append(getUniversityName());
+        sbEd.append("\nLocation:   ");
+        sbEd.append(getUniversityAddress());
+        sbEd.append("\nDegree:     ");
+        if (getGraduated()) {
+            sbEd.append(getDegree());
+        }
+        else {
+            sbEd.append("Pending");
+        }
+        sbEd.append("\n");
+
+        return sbEd.toString();
+    }
+
+
+    // Constructors
     public Education() {
     }
 
@@ -18,6 +41,7 @@ public class Education {
         this.other = other;
     }
 
+    // Getters and Setters
     public String getUniversityName() {
         return universityName;
     }

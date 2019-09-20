@@ -50,13 +50,14 @@ public class RoboResume {
         input = keybd.nextLine();
         yourResume.setPhone(input);
 
+
         // Enter your educational experience
         System.out.println("Did you attend a college or university:(Y|N)");
         input = keybd.nextLine();
         if (input.equalsIgnoreCase("y")) {
             boolean continueEd = true;
 
-            while(continueEd) {
+            while (continueEd) {
                 Education ed = new Education();
 
                 System.out.println("What is the name of the university or college you attended: ");
@@ -94,29 +95,78 @@ public class RoboResume {
 
                 System.out.println("Did your attend any other colleges or universities? (Y|N)");
                 input = keybd.nextLine();
-                if (input.equalsIgnoreCase("n")) { continueEd = false; }
-            }
-
-            // Skills section
-            System.out.println("You will be asked to enter technical, managerial, and soft skills separately");
-            System.out.println("Do you have any technical skills that you would like to enter: (Y|N)");
-            input = keybd.nextLine();
-            if (input.equalsIgnoreCase("y")) {
-                boolean continueSkills = true;
-                Skills tmpSkills = new Skills();
-                while (continueSkills) {
-                    System.out.println("Please enter a skill that you would like to enter: ");
-                    input = keybd.nextLine();
-
-                    yourResume.skills.add(input);
-
-                    System.out.println("Do you want to enter any more skills? (Y|N)");
-                    input = keybd.nextLine();
-                    if (input.equalsIgnoreCase("n")) {
-                        continueSkills = false;
-                    }
+                if (input.equalsIgnoreCase("n")) {
+                    continueEd = false;
                 }
             }
         }
+
+
+        // Skills section
+        //      Technical Skills
+        System.out.println("You will be asked to enter technical and managerial skills separately");
+        System.out.println("\tDo you have any technical skills that you would like to enter: (Y|N)");
+        input = keybd.nextLine();
+        if (input.equalsIgnoreCase("y")) {
+            boolean continueSkills = true;
+            Skills tmpSkills = new Skills();
+            while (continueSkills) {
+                System.out.println("Please enter a skill that you would like to enter: ");
+                input = keybd.nextLine();
+
+                tmpSkills.putString(input);
+
+                System.out.println("\tDo you want to enter any more skills? (Y|N)");
+                input = keybd.nextLine();
+                if (input.equalsIgnoreCase("n")) {
+                    continueSkills = false;
+                    yourResume.setTSkills(tmpSkills);
+                }
+            }
+        }
+
+
+        //      Managerial Skills
+        System.out.println("You will be asked to enter technical and managerial skills separately");
+        System.out.println("\tDo you have any management skills that you would like to enter: (Y|N)");
+        input = keybd.nextLine();
+        if (input.equalsIgnoreCase("y")) {
+            boolean continueSkills = true;
+            Skills tmpSkills = new Skills();
+            while (continueSkills) {
+                System.out.println("Please enter a skill that you would like to enter: ");
+                input = keybd.nextLine();
+
+                tmpSkills.putString(input);
+
+                System.out.println("\tDo you want to enter any more skills? (Y|N)");
+                input = keybd.nextLine();
+                if (input.equalsIgnoreCase("n")) {
+                    continueSkills = false;
+                    yourResume.setMSkills(tmpSkills);
+                }
+            }
+        }
+
+
+        // Printing out information
+        System.out.println();
+        System.out.println(yourResume.printPersonal());
+        // System.out.println();
+
+        // Printing out Educational information
+        System.out.println("Educational Experience:");
+        System.out.println("=======================");
+        for (int i = 0; i < yourResume.getEducation().size(); i++) {
+            System.out.println(yourResume.getEducation().get(i).printEducation());
+        }
+        // System.out.println();
+
+        // Printing out Skill Set information
+        System.out.println(yourResume.getTSkills().printSkills("Technical Skills: ", yourResume.getTSkills()));
+        // System.out.println();
+
+        System.out.println(yourResume.getMSkills().printSkills("Managerial Skills: ", yourResume.getMSkills()));
+        // System.out.println();
     }
 }
