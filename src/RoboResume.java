@@ -50,6 +50,69 @@ public class RoboResume {
         input = keybd.nextLine();
         yourResume.setPhone(input);
 
+        // Enter your work experience
+        System.out.println("Do you have any work experience: (Y|N)");
+        input = keybd.nextLine();
+        if (input.equalsIgnoreCase("y")) {
+            boolean continueWork = true;
+
+            while (continueWork) {
+                WorkExperience wk = new WorkExperience();
+
+                System.out.println("What is the name of the company that you worked for:");
+                input = keybd.nextLine();
+                wk.setJobCompany(input);
+
+                System.out.println("What is the address of the company that you worked for:");
+                input = keybd.nextLine();
+                wk.setJobCompanyAddress(input);
+
+                System.out.println("What was the job title:");
+                input = keybd.nextLine();
+                wk.setJobTitle(input);
+
+                System.out.println("Who was your manager for this job:");
+                input = keybd.nextLine();
+                wk.setJobManager(input);
+
+                System.out.println("Can we contact this manager? (Y|N)");
+                input = keybd.nextLine();
+                if (input.equalsIgnoreCase("y")) {
+                    wk.setCanContact(true);
+                    System.out.println("\tPlease enter your manager's phone number:");
+                    input = keybd.nextLine();
+                    wk.setJobManagerPhone(input);
+                }
+
+                System.out.println("Please enter a brief description of the job you worked on:");
+                input = keybd.nextLine();
+                wk.setJobDescription(input);
+
+                System.out.println("Please enter some of the duties and responsibilities for this job:");
+                boolean continueDuties = true;
+                while (continueDuties) {
+                    System.out.println("Please enter a skill that you would like to enter: ");
+                    input = keybd.nextLine();
+
+                    wk.putString(input);
+
+                    System.out.println("\nDo you want to enter any more job duties? (Y|N)");
+                    input = keybd.nextLine();
+                    if (input.equalsIgnoreCase("n")) {
+                        continueDuties = false;
+                        yourResume.workExperience.add(wk);
+                    }
+
+                }
+                System.out.println("Do you have any more jobs to enter? (Y|N)");
+                input = keybd.nextLine();
+                if (input.equalsIgnoreCase("n")) {
+                    continueWork = false;
+                }
+            }
+            System.out.println("This ends the job work experience section");
+        }
+
 
         // Enter your educational experience
         System.out.println("Did you attend a college or university:(Y|N)");
@@ -153,6 +216,13 @@ public class RoboResume {
         System.out.println();
         System.out.println(yourResume.printPersonal());
         // System.out.println();
+
+        // Printing out Work Experience information
+        System.out.println("Work Experience:");
+        System.out.println("================");
+        for (int i = 0; i < yourResume.getWorkExperience().size(); i++) {
+            System.out.println(yourResume.getWorkExperience().get(i).printWorkExperience());
+        }
 
         // Printing out Educational information
         System.out.println("Educational Experience:");
