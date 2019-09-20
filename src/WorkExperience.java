@@ -72,7 +72,6 @@ public class WorkExperience {
     public String getJobCompany() {
         return jobCompany;
     }
-
     public void setJobCompany(String jobCompany) {
         this.jobCompany = jobCompany;
     }
@@ -80,7 +79,6 @@ public class WorkExperience {
     public String getJobCompanyAddress() {
         return jobCompanyAddress;
     }
-
     public void setJobCompanyAddress(String jobCompanyAddress) {
         this.jobCompanyAddress = jobCompanyAddress;
     }
@@ -88,7 +86,6 @@ public class WorkExperience {
     public String getJobTitle() {
         return jobTitle;
     }
-
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
@@ -96,7 +93,6 @@ public class WorkExperience {
     public String getJobDescription() {
         return jobDescription;
     }
-
     public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
     }
@@ -104,7 +100,6 @@ public class WorkExperience {
     public String getJobManager() {
         return jobManager;
     }
-
     public void setJobManager(String jobManager) {
         this.jobManager = jobManager;
     }
@@ -112,7 +107,6 @@ public class WorkExperience {
     public boolean isCanContact() {
         return canContact;
     }
-
     public void setCanContact(boolean canContact) {
         this.canContact = canContact;
     }
@@ -120,7 +114,6 @@ public class WorkExperience {
     public String getJobManagerPhone() {
         return jobManagerPhone;
     }
-
     public void setJobManagerPhone(String jobManagerPhone) {
         this.jobManagerPhone = jobManagerPhone;
     }
@@ -128,7 +121,6 @@ public class WorkExperience {
     public ArrayList<String> getJobDuties() {
         return jobDuties;
     }
-
     public void setJobDuties(ArrayList<String> jobDuties) {
         this.jobDuties = jobDuties;
     }

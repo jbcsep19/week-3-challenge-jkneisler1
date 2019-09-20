@@ -46,6 +46,7 @@ public class Resume {
 
         return sbrp.toString();
     }
+
     // Resume constructors
     public Resume() {
     }
@@ -68,6 +69,7 @@ public class Resume {
     }
 
     // Getters and Setters
+    // Personal Information
     public String getName() {
         return name;
     }

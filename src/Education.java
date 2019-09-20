@@ -9,8 +9,6 @@ public class Education {
     // Methods
     public String printEducation() {
         StringBuilder sbEd = new StringBuilder();
-        // sbEd.append("\nEducational Experience:");
-        // sbEd.append("\n=======================");
         sbEd.append("University: ");
         sbEd.append(getUniversityName());
         sbEd.append("\nLocation:   ");
@@ -45,7 +43,6 @@ public class Education {
     public String getUniversityName() {
         return universityName;
     }
-
     public void setUniversityName(String universityName) {
         this.universityName = universityName;
     }
@@ -53,7 +50,6 @@ public class Education {
     public String getUniversityAddress() {
         return universityAddress;
     }
-
     public void setUniversityAddress(String universityAddress) {
         this.universityAddress = universityAddress;
     }
@@ -61,7 +57,6 @@ public class Education {
     public Double getGradePointAverage() {
         return gradePointAverage;
     }
-
     public void setGradePointAverage(Double gradePointAverage) {
         this.gradePointAverage = gradePointAverage;
     }
@@ -69,7 +64,6 @@ public class Education {
     public Boolean getGraduated() {
         return graduated;
     }
-
     public void setGraduated(Boolean graduated) {
         this.graduated = graduated;
     }
@@ -77,7 +71,6 @@ public class Education {
     public String getDegree() {
         return degree;
     }
-
     public void setDegree(String degree) {
         this.degree = degree;
     }
@@ -85,7 +78,6 @@ public class Education {
     public String getOther() {
         return other;
     }
-
     public void setOther(String other) {
         this.other = other;
     }

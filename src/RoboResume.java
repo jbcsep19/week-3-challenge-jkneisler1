@@ -7,6 +7,7 @@ public class RoboResume {
         boolean tmpBool;                // used in some of the questions below
         Resume yourResume = null;
 
+        // Start of the Robo Resume questions
         System.out.println("Would you like to create a resume? (Y|N)");
         input = keybd.nextLine();
         if (input.equalsIgnoreCase("y")) {
@@ -215,7 +216,6 @@ public class RoboResume {
         // Printing out information
         System.out.println();
         System.out.println(yourResume.printPersonal());
-        // System.out.println();
 
         // Printing out Work Experience information
         System.out.println("Work Experience:");
@@ -230,13 +230,10 @@ public class RoboResume {
         for (int i = 0; i < yourResume.getEducation().size(); i++) {
             System.out.println(yourResume.getEducation().get(i).printEducation());
         }
-        // System.out.println();
 
         // Printing out Skill Set information
         System.out.println(yourResume.getTSkills().printSkills("Technical Skills: ", yourResume.getTSkills()));
-        // System.out.println();
 
         System.out.println(yourResume.getMSkills().printSkills("Managerial Skills: ", yourResume.getMSkills()));
-        // System.out.println();
     }
 }
